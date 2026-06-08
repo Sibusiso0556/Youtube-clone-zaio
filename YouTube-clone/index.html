@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouTube Clone</title>
+    <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Pure-CSS dark mode toggle -->
+  <input type="checkbox" id="dark-toggle" />
+  <!-- Pure-CSS mobile sidebar toggle -->
+  <input type="checkbox" id="sidebar-toggle" />
+
+  <div class="page">
+
+    <!--  NAVBAR  -->
+    <header class="navbar">
+
+      <div class="nav-left">
+        <label for="sidebar-toggle" class="hamburger" aria-label="Toggle menu">
+          <i class="material-icons">menu</i>
+        </label>
+        <a href="#" class="logo-link">
+          <svg class="yt-logo-svg" viewBox="0 0 105 22" xmlns="http://www.w3.org/2000/svg">
+            <rect width="28" height="20" rx="6" fill="#FF0000" y="1"/>
+            <polygon points="10,5 22,11 10,17" fill="white"/>
+            <text x="33" y="16" font-family="Roboto,sans-serif" font-weight="700"
+                  font-size="15" fill="currentColor" letter-spacing="-0.3">YouTube</text>
+          </svg>
+          <span class="logo-country">ZA</span>
+        </a>
+      </div>
+
+      <div class="searchbar">
+        <form class="search" onsubmit="return false;">
+          <input type="text" placeholder="Search" aria-label="Search" />
+          <button type="submit" aria-label="Search">
+            <i class="material-icons">search</i>
+          </button>
+        </form>
+        <button class="mic-btn" aria-label="Voice search">
+          <i class="material-icons">mic</i>
+        </button>
+      </div>
+
+      <nav class="nav-right">
+        <!-- Dark mode – manual feature, pure CSS -->
+        <label for="dark-toggle" class="icon-btn dark-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <i class="material-icons sun-icon">light_mode</i>
+          <i class="material-icons moon-icon">dark_mode</i>
+        </label>
+
+        <button class="create-btn" aria-label="Create">
+          <i class="material-icons">add</i>
+          <span>Create</span>
+        </button>
+
+        <!-- No badge on notifications -->
+        <button class="icon-btn" aria-label="Notifications">
+          <i class="material-icons">notifications</i>
+        </button>
+
+        <button class="avatar-btn" aria-label="Account">
+          <img src="images/Profile.jpeg" alt="profile" />
+        </button>
+      </nav>
+    </header>
+
+    <!--  PAGE BODY -->
+    <div class="page-body">
+
+      <!-- Mobile overlay -->
+      <label for="sidebar-toggle" class="sidebar-overlay" aria-hidden="true"></label>
+
+      <!-- SIDEBAR  -->
+      <aside class="sidebar">
+
+        <!-- Mobile close -->
+        <label for="sidebar-toggle" class="sidebar-close" aria-label="Close menu">
+          <i class="material-icons">close</i>
+        </label>
+
+        <!-- Nav links -->
+        <div class="sidebar-section">
+          <a href="#" class="category active">
+            <i class="material-icons">home</i><span>Home</span>
+          </a>
+          <a href="#" class="category">
+            <i class="material-icons">play_circle</i><span>Shorts</span>
+          </a>
+          <a href="#" class="category">
+            <i class="material-icons">subscriptions</i><span>Subscriptions</span>
+          </a>
+        </div>
+
+        <!-- You -->
+        <div class="sidebar-section">
+          <p class="sidebar-heading">You</p>
+          <a href="#" class="category"><i class="material-icons">manage_accounts</i><span>Your channel</span></a>
+          <a href="#" class="category"><i class="material-icons">history</i><span>History</span></a>
+          <a href="#" class="category"><i class="material-icons">playlist_play</i><span>Playlists</span></a>
+          <a href="#" class="category"><i class="material-icons">thumb_up</i><span>Liked videos</span></a>
+          <a href="#" class="category"><i class="material-icons">download</i><span>Downloads</span></a>
+          <a href="#" class="category"><i class="material-icons">podcasts</i><span>Podcasts</span></a>
+        </div>
+
+        <!-- Subscriptions -->
+        <div class="sidebar-section">
+          <p class="sidebar-heading">Subscriptions</p>
+          <a href="#" class="category sub-item"><img src="https://i.pravatar.cc/32?img=21" alt="Bro Code" class="sub-avatar"/><span>Bro Code</span></a>
+          <a href="#" class="category sub-item"><img src="https://i.pravatar.cc/32?img=22" alt="freeCodeCamp" class="sub-avatar"/><span>freeCodeCamp</span></a>
+          <a href="#" class="category sub-item"><img src="https://i.pravatar.cc/32?img=23" alt="Traversy Media" class="sub-avatar"/><span>Traversy Media</span></a>
+          <a href="#" class="category sub-item"><img src="https://i.pravatar.cc/32?img=24" alt="Kevin Powell" class="sub-avatar"/><span>Kevin Powell</span></a>
+          <a href="#" class="category sub-item"><img src="https://i.pravatar.cc/32?img=25" alt="Fireship" class="sub-avatar"/><span>Fireship</span></a>
+        </div>
+
+        <!-- Explore -->
+        <div class="sidebar-section">
+          <p class="sidebar-heading">Explore</p>
+          <a href="#" class="category"><i class="material-icons">music_note</i><span>Music</span></a>
+          <a href="#" class="category"><i class="material-icons">sports_esports</i><span>Gaming</span></a>
+          <a href="#" class="category"><i class="material-icons">newspaper</i><span>News</span></a>
+          <a href="#" class="category"><i class="material-icons">emoji_events</i><span>Sports</span></a>
+          <a href="#" class="category"><i class="material-icons">school</i><span>Learning</span></a>
+          <a href="#" class="category"><i class="material-icons">expand_more</i><span>Show more</span></a>
+        </div>
+
+        <!-- More from YouTube -->
+        <div class="sidebar-section">
+          <p class="sidebar-heading">More from YouTube</p>
+          <a href="#" class="category yt-special"><i class="material-icons">smart_display</i><span>YouTube Premium</span></a>
+          <a href="#" class="category yt-special"><i class="material-icons">library_music</i><span>YouTube Music</span></a>
+          <a href="#" class="category yt-special"><i class="material-icons">child_care</i><span>YouTube Kids</span></a>
+        </div>
+
+        <!-- Settings & misc -->
+        <div class="sidebar-section">
+          <a href="#" class="category"><i class="material-icons">settings</i><span>Settings</span></a>
+          <a href="#" class="category"><i class="material-icons">flag</i><span>Report history</span></a>
+          <a href="#" class="category"><i class="material-icons">help</i><span>Help</span></a>
+          <a href="#" class="category"><i class="material-icons">feedback</i><span>Send feedback</span></a>
+        </div>
+
+        <!-- FOOTER inside sidebar (matching reference image)  -->
+        <div class="sidebar-footer">
+          <div class="sidebar-footer-links">
+            <a href="#">About</a><a href="#">Press</a><a href="#">Copyright</a>
+            <a href="#">Contact us</a><a href="#">Creators</a><a href="#">Advertise</a>
+            <a href="#">Developers</a><a href="#">Terms</a><a href="#">Privacy</a>
+            <a href="#">Policy &amp; Safety</a><a href="#">How YouTube works</a>
+            <a href="#">Test new features</a>
+          </div>
+          <p class="sidebar-footer-copy">© 2026 Google LLC</p>
+        </div>
+
+      </aside><!-- /sidebar -->
+
+      <!--  MAIN CONTENT  -->
+      <main class="main-content">
+
+        <!-- Chips bar -->
+        <div class="chips-bar">
+          <button class="chip active-chip">All</button>
+          <button class="chip">Music</button>
+          <button class="chip">Podcasts</button>
+          <button class="chip">Afro House music</button>
+          <button class="chip">Mixes</button>
+          <button class="chip">Rhythms</button>
+          <button class="chip">Comedy clubs</button>
+          <button class="chip">Live</button>
+          <button class="chip">Source code</button>
+          <button class="chip">Website</button>
+          <button class="chip">Classical Music</button>
+          <button class="chip">Accounting</button>
+          <button class="chip">Programming</button>
+          <button class="chip">Web Development</button>
+        </div>
+
+        <!--- VIDEO GRID  -->
+        <div class="video-grid">
+
+          <!-- Video 1 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/UB1O30fR-EE/maxresdefault.jpg" alt="HTML Crash Course" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/UB1O30fR-EE/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">1:03:30</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+              <div class="progress-bar"><div class="progress-fill" style="width:45%"></div></div>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=1" alt="Traversy Media" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">HTML Crash Course For Absolute Beginners</h4>
+                <p class="card-channel">Traversy Media <i class="material-icons verified">verified</i></p>
+                <span class="card-stats">2.1M views&nbsp;•&nbsp;2 years ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/yfoY53QXEnI/maxresdefault.jpg" alt="CSS Full Course" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/yfoY53QXEnI/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">11:20:01</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=2" alt="freeCodeCamp" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">CSS Full Course  Build 20 Projects</h4>
+                <p class="card-channel">freeCodeCamp.org <i class="material-icons verified">verified</i></p>
+                <span class="card-stats">1.5M views&nbsp;•&nbsp;1 year ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/PkZNo7MFNFg/maxresdefault.jpg" alt="JavaScript Full Course" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/PkZNo7MFNFg/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">3:26:42</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+              <div class="progress-bar"><div class="progress-fill" style="width:72%"></div></div>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=3" alt="freeCodeCamp" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">JavaScript Full Course for Beginners</h4>
+                <p class="card-channel">freeCodeCamp.org <i class="material-icons verified">verified</i></p>
+                <span class="card-stats">3.2M views&nbsp;•&nbsp;2 years ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 4 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/zJSY8tbf_ys/maxresdefault.jpg" alt="Responsive Design" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/zJSY8tbf_ys/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">38:46</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=4" alt="Kevin Powell" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">Responsive Web Design Is Easier Than You Think</h4>
+                <p class="card-channel">Kevin Powell <i class="material-icons verified">verified</i></p>
+                <span class="card-stats">850K views&nbsp;•&nbsp;11 months ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 5 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/Ke90Tje7VS0/maxresdefault.jpg" alt="React Tutorial" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/Ke90Tje7VS0/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">1:22:09</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+              <div class="progress-bar"><div class="progress-fill" style="width:20%"></div></div>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=5" alt="Programming with Mosh" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">React JS Tutorial for Beginners  Full Course</h4>
+                <p class="card-channel">Programming with Mosh <i class="material-icons verified">verified</i></p>
+                <span class="card-stats">2.5M views&nbsp;•&nbsp;2 years ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 6 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/nu_pCVPKzTk/maxresdefault.jpg" alt="Git GitHub" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/nu_pCVPKzTk/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">1:09:13</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=6" alt="CodeWithHarry" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">Git &amp; GitHub Tutorial for Beginners</h4>
+                <p class="card-channel">CodeWithHarry</p>
+                <span class="card-stats">1M views&nbsp;•&nbsp;8 months ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 7 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/rfscVS0vtbw/maxresdefault.jpg" alt="Python Full Course" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/rfscVS0vtbw/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">4:26:52</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=7" alt="freeCodeCamp" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">Python Full Course for Beginners</h4>
+                <p class="card-channel">freeCodeCamp.org <i class="material-icons verified">verified</i></p>
+                <span class="card-stats">4M views&nbsp;•&nbsp;3 years ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 8 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/Q33KBiDriJY/maxresdefault.jpg" alt="UI Design" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/Q33KBiDriJY/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">52:18</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=8" alt="DesignCourse" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">UI Design Principles  Full Crash Course</h4>
+                <p class="card-channel">DesignCourse <i class="material-icons verified">verified</i></p>
+                <span class="card-stats">900K views&nbsp;•&nbsp;1 year ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 9 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/jS4aFq5-91M/maxresdefault.jpg" alt="YouTube Clone" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/jS4aFq5-91M/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">2:14:05</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+              <div class="progress-bar"><div class="progress-fill" style="width:88%"></div></div>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=9" alt="Zaio" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">Build a YouTube Clone  HTML, CSS &amp; JavaScript</h4>
+                <p class="card-channel">Zaio <i class="material-icons verified">verified</i></p>
+                <span class="card-stats">120K views&nbsp;•&nbsp;4 months ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 10 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/Tn6-PIqc4UM/maxresdefault.jpg" alt="TypeScript" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/Tn6-PIqc4UM/mqdefault.jpg"    alt="Preview" />
+              <span class="duration live-badge">LIVE</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=10" alt="Fireship" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">TypeScript  The Complete Developer's Guide</h4>
+                <p class="card-channel">Fireship <i class="material-icons verified">verified</i></p>
+                <span class="card-stats">8.4K watching</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 11 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/pN_lm6QqHcw/maxresdefault.jpg" alt="Node.js" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/pN_lm6QqHcw/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">1:48:00</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=11" alt="Traversy Media" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">Node.js &amp; Express Crash Course</h4>
+                <p class="card-channel">Traversy Media <i class="material-icons verified">verified</i></p>
+                <span class="card-stats">1.3M views&nbsp;•&nbsp;10 months ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+          <!-- Video 12 -->
+          <div class="video-card">
+            <div class="thumbnail">
+              <img class="thumb-main"    src="https://i.ytimg.com/vi/CMGfNE2WQKA/maxresdefault.jpg" alt="Tailwind CSS" />
+              <img class="thumb-preview" src="https://i.ytimg.com/vi/CMGfNE2WQKA/mqdefault.jpg"    alt="Preview" />
+              <span class="duration">57:33</span>
+              <button class="watch-later" aria-label="Watch later"><i class="material-icons">watch_later</i></button>
+            </div>
+            <div class="card-info">
+              <img src="https://i.pravatar.cc/40?img=13" alt="The Net Ninja" class="card-avatar" />
+              <div class="card-meta">
+                <h4 class="card-title">Tailwind CSS Full Tutorial  From Zero to Hero</h4>
+                <p class="card-channel">The Net Ninja</p>
+                <span class="card-stats">420K views&nbsp;•&nbsp;6 months ago</span>
+              </div>
+              <button class="more-btn" aria-label="More"><i class="material-icons">more_vert</i></button>
+            </div>
+          </div>
+
+        </div><!-- /video-grid -->
+
+      </main>
+
+    </div><!-- /page-body -->
+
+  </div><!-- /page -->
+
+</body>
+</html>
